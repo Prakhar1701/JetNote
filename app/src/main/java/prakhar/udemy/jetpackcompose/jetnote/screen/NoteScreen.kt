@@ -18,9 +18,14 @@ import androidx.compose.ui.unit.dp
 import prakhar.udemy.jetpackcompose.jetnote.R
 import prakhar.udemy.jetpackcompose.jetnote.components.NoteButton
 import prakhar.udemy.jetpackcompose.jetnote.components.NoteInputText
+import prakhar.udemy.jetpackcompose.jetnote.model.Note
 
 @Composable
-fun NoteScreen() {
+fun NoteScreen(
+    notes: List<Note>,
+    onAddNote: (Note) -> Unit,
+    onRemoveNote: (Note) -> Unit
+) {
 
     var title by remember {
         mutableStateOf("")
@@ -61,7 +66,17 @@ fun NoteScreen() {
                         description = it
                 })
 
-            NoteButton(text = "Save", onClick = { /*TODO*/ })
+            NoteButton(
+                text = "Save",
+                onClick = {
+                    if (title.isNotEmpty() && description.isNotEmpty()) {
+
+                        //TODO - save / add to list
+
+                        title = ""
+                        description = ""
+                    }
+                })
         }
     }
 }
@@ -69,5 +84,5 @@ fun NoteScreen() {
 @Preview(showBackground = true)
 @Composable
 fun NotesScreenPreview() {
-    NoteScreen()
+    NoteScreen(notes = emptyList(), onAddNote = {}, onRemoveNote = {})
 }
