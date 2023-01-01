@@ -9,6 +9,7 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import prakhar.udemy.jetpackcompose.jetnote.screen.NoteScreen
 import prakhar.udemy.jetpackcompose.jetnote.ui.theme.JetNoteTheme
 
 class MainActivity : ComponentActivity() {
@@ -21,7 +22,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-
+                    NoteScreen()
                 }
             }
         }
