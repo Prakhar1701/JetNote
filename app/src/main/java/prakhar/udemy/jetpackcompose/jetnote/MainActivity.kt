@@ -11,10 +11,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
+import dagger.hilt.android.AndroidEntryPoint
 import prakhar.udemy.jetpackcompose.jetnote.screen.NoteScreen
 import prakhar.udemy.jetpackcompose.jetnote.screen.NoteViewModel
 import prakhar.udemy.jetpackcompose.jetnote.ui.theme.JetNoteTheme
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
