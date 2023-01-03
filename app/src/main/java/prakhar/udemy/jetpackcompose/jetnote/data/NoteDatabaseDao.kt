@@ -1,13 +1,14 @@
 package prakhar.udemy.jetpackcompose.jetnote.data
 
 import androidx.room.*
+import kotlinx.coroutines.flow.Flow
 import prakhar.udemy.jetpackcompose.jetnote.model.Note
 
 @Dao
 interface NoteDatabaseDao {
 
     @Query("SELECT * from notes_tbl")
-    fun getNotes(): List<Note>
+    fun getNotes(): Flow<List<Note>>
 
     @Query("SELECT * from notes_tbl where id =:id")
     suspend fun getNoteById(id: String): Note
