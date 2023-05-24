@@ -3,17 +3,11 @@ package prakhar.udemy.jetpackcompose.jetnote
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.lifecycle.viewmodel.compose.viewModel
 import dagger.hilt.android.AndroidEntryPoint
-import prakhar.udemy.jetpackcompose.jetnote.screen.NoteScreen
-import prakhar.udemy.jetpackcompose.jetnote.screen.NoteViewModel
 import prakhar.udemy.jetpackcompose.jetnote.ui.theme.JetNoteTheme
 
 @AndroidEntryPoint
@@ -27,26 +21,19 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    val noteViewModel: NoteViewModel by viewModels()
-                    NotesApp(noteViewModel)
+//                    val noteViewModel: NoteViewModel by viewModels()
+//                    NotesApp(noteViewModel)
                 }
             }
         }
     }
 }
 
-@Composable
-fun NotesApp(noteViewModel: NoteViewModel = viewModel()) {
-    val notesList = noteViewModel.getAllNotes()
-    NoteScreen(
-        notes = notesList,
-        onAddNote = { noteViewModel.addNote(it) },
-        onRemoveNote = { noteViewModel.removeNote(it) })
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    JetNoteTheme {
-    }
-}
+//@Composable
+//fun NotesApp(noteViewModel: NoteViewModel = viewModel()) {
+//    val notesList = noteViewModel.getAllNotes()
+//    NoteScreen(
+//        notes = notesList,
+//        onAddNote = { noteViewModel.addNote(it) },
+//        onRemoveNote = { noteViewModel.removeNote(it) })
+//}
