@@ -3,8 +3,9 @@ package prakhar.udemy.jetpackcompose.jetnote.model
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.time.LocalDateTime
-import java.util.*
+import java.time.Instant
+import java.util.Date
+import java.util.UUID
 
 @Entity(tableName = "notes_tbl")
 data class Note(
@@ -17,6 +18,6 @@ data class Note(
     @ColumnInfo(name = "note_description")
     val description: String,
 
-    @ColumnInfo(name = "note_entry_data")
-    val entryData: LocalDateTime = LocalDateTime.now(),
+    @ColumnInfo(name = "note_entry_date")
+    val entryDate: Date = Date.from(Instant.now())
 )

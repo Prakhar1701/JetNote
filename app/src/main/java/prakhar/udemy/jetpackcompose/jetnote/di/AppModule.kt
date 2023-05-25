@@ -11,8 +11,8 @@ import prakhar.udemy.jetpackcompose.jetnote.data.NoteDatabase
 import prakhar.udemy.jetpackcompose.jetnote.data.NoteDatabaseDao
 import javax.inject.Singleton
 
-@InstallIn(SingletonComponent::class)
 @Module
+@InstallIn(SingletonComponent::class)
 object AppModule {
 
     @Singleton

@@ -78,6 +78,10 @@ dependencies {
 
     //Kotlin coroutines:
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+
+    // To use Kotlin annotation processing tool (kapt) MUST HAVE!
+    kapt("androidx.room:room-compiler:$room_version")
+    implementation "androidx.room:room-ktx:$room_version"
 }
 
 // Allow references to generated code
